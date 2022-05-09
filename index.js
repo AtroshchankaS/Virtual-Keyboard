@@ -18,7 +18,7 @@ window.onload = function virtKB() {
     const pstext = document.createElement('div');
     pstext.classList.add('pstext');
     pstext.innerHTML =
-      'Клавиатура работает в ОС Windows. Для переключения языка комбинация: ctrl + alt';
+      'Клавиатура работает в ОС Windows. Для переключения языка клавиши: ctrl + alt';
     document.body.append(pstext);
     const string1 = [
       ['Backquote', '`', '~', 'ё', 'Ё'],
@@ -252,7 +252,7 @@ window.onload = function virtKB() {
         if (e.code === x.name) {
           if (e.code === 'CapsLock') {
             if (!capsOn) {
-              el.div.style.background = 'blue';
+              el.div.style.background = 'rgb(127, 127, 206)';
               capsOn = true;
               for (let i = 13; i < allKeys.length; i++) {
                 allKeys[i].switchCase();
@@ -266,7 +266,7 @@ window.onload = function virtKB() {
             }
             return;
           }
-          el.div.style.background = 'blue';
+          el.div.style.background = 'rgb(127, 127, 206)';
             if (e.altKey && (e.metaKey || e.ctrlKey)) {
             allKeys.forEach((item) => {
               item.switchLanguage();
@@ -308,7 +308,6 @@ window.onload = function virtKB() {
         if (e.code === x.name) {
           if (e.code !== 'CapsLock') {
             el.div.style.background = 'rgb(150, 141, 141)';
-            el.div.style.transform = 'scale(1)';
             if (e.code === 'ShiftLeft' || e.code === 'ShiftRight') {
               shiftDown = false;
               allKeys.forEach((item) => {
